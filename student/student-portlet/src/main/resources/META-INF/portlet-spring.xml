@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.epam.sb.students.service.CourseLocalService" class="com.epam.sb.students.service.impl.CourseLocalServiceImpl" />
+	<bean id="com.epam.sb.students.service.CourseService" class="com.epam.sb.students.service.impl.CourseServiceImpl" />
+	<bean id="com.epam.sb.students.service.persistence.CoursePersistence" class="com.epam.sb.students.service.persistence.CoursePersistenceImpl" parent="basePersistence" />
+	<bean id="com.epam.sb.students.service.StudentLocalService" class="com.epam.sb.students.service.impl.StudentLocalServiceImpl" />
+	<bean id="com.epam.sb.students.service.StudentService" class="com.epam.sb.students.service.impl.StudentServiceImpl" />
+	<bean id="com.epam.sb.students.service.persistence.StudentPersistence" class="com.epam.sb.students.service.persistence.StudentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.epam.sb.students.service.persistence.StudentFinder" class="com.epam.sb.students.service.persistence.StudentFinderImpl" parent="basePersistence" />
+</beans>

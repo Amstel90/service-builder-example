@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.epam.sb.students.model.Course">
+		<field name="courseId" type="long" />
+		<field name="courseName" type="String" />
+	</model>
+	<model name="com.epam.sb.students.model.Student">
+		<field name="studentId" type="long" />
+		<field name="studentName" type="String" />
+		<field name="grade" type="double" />
+	</model>
+</model-hints>

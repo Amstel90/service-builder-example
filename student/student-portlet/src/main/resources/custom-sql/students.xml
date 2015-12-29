@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+    <!--<sql id="de.razorfish.mcd.data.service.persistence.CampaignFinder.findAllLive">-->
+    <sql id="com.epam.sb.students.service.persistence.StudentFinder.findLikeA">
+    <![CDATA[
+        SELECT
+            student.*
+         FROM student_student student
+         WHERE student.studentName LIKE '%a%'
+    ]]>
+    </sql>
+</custom-sql>

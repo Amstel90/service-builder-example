@@ -1,0 +1,77 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.epam.sb.students">
+	<namespace>student</namespace>
+	<entity name="Student" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="studentId" type="long" primary="true" id-type="increment"/>
+
+		<!-- Group instance -->
+
+		<!--<column name="groupId" type="long" />-->
+
+		<!-- Other fields -->
+
+		<column name="studentName" type="String" />
+        <column name="grade" type="double" />
+
+        <column name="courses" type="Collection" entity="Course" mapping-table="Students_Courses"/>
+
+        <!-- Order -->
+
+		<order by="asc">
+			<order-column name="studentName" />
+		</order>
+
+		 <!--Finder methods -->
+        <finder name="StudentName" return-type="Collection">
+            <finder-column name="studentName" />
+        </finder>
+
+		<!--<finder name="Field2" return-type="Collection">-->
+			<!--<finder-column name="field2" />-->
+		<!--</finder>-->
+
+		<!-- References -->
+
+		<!--<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />-->
+		<!--<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />-->
+	</entity>
+
+    <entity name="Course" local-service="true" remote-service="true">
+
+        <!-- PK fields -->
+
+        <column name="courseId" type="long" primary="true" id-type="increment"/>
+
+        <!-- Group instance -->
+
+        <!--<column name="groupId" type="long" />-->
+
+        <!-- Other fields -->
+
+        <column name="courseName" type="String" />
+
+        <column name="students" type="Collection" entity="Student" mapping-table="Students_Courses"/>
+
+
+        <!-- Order -->
+
+        <order by="asc">
+            <order-column name="courseName" />
+        </order>
+
+        <!-- Finder methods -->
+
+        <!--<finder name="Field2" return-type="Collection">-->
+        <!--<finder-column name="field2" />-->
+        <!--</finder>-->
+
+        <!-- References -->
+
+        <!--<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />-->
+        <!--<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />-->
+    </entity>
+</service-builder>

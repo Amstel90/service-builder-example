@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.epam.sb.students.model.Course" />
+	<import class="com.epam.sb.students.model.Student" />
+	<class name="com.epam.sb.students.model.impl.CourseImpl" table="student_Course">
+		<cache usage="read-write" />
+		<id name="courseId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="courseName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.epam.sb.students.model.impl.StudentImpl" table="student_Student">
+		<cache usage="read-write" />
+		<id name="studentId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="studentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="grade" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+</hibernate-mapping>
